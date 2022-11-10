@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Interactive card details form</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <section class="card-display">
+
+      <div class="card-front">
+        <img src="images/bg-card-front.png" alt="" class="card-front-img">
+        <img src="images/card-logo.svg" alt="" class="card-logo">
+
+        <p class="card-number-display">0000 0000 0000 0000</p>
+        <p class="card-name-display">Jane Appleseed</p>
+        <p class="card-month-display">00/00</p>
+      </div>
+
+      <div class="card-back">
+        <img src="images/bg-card-back.png" alt="" class="card-back-img">
+        <p class="cvc-display">000</p>
+      </div>
+    </section>
+
+    <!-- Form Card -->
+
+    <section class="card-details">
+      <form action="" id="myForm" name="myForm">
+        <label for="cardholder-name">Cardholder Name</label>
+        <input id="cardholder-name" class="cardholder-name" type="text" name="cardholder-name"
+          placeholder="e.g. Jane Appleseed">
+        <p class="errorMsg"></p>
+
+        <label for="card-number">Card Number</label>
+        <input id="card-number" class="card-number" type="text" name="card-number" maxlength="19"
+          placeholder="e.g. 1234 5678 9123 0000">
+        <p class="card-num-error"></p>
+
+        <div class="flex">
+          <label for="expiry-date" class="expiry-date">Exp. Date (MM/YY) <br>
+            <input class="expiry" id="expiry-month" type="text" name="expiry-date" maxlength="2" placeholder="MM">
+
+            <input class="expiry" id="expiry-year" type="text" name="expiry-date" maxlength="2" placeholder="YY">
+
+            <p class="year-error"></p>
+
+          </label>
+
+          <label for="cvc" class="cvc">
+            <span>CVC</span> <br />
+            <input class="cvc" id="cvc" type="text" name="cvc" maxlength="3" placeholder="e.g. 123">
+            <p class="cvc-error"></p>
+          </label>
+        </div>
+        <button id="submit"><a href="#">Confirm</a></button>
+      </form>
+
+
+      <!-- Thank You Box -->
+      <div id="thank-you" class="thank-you hidden">
+        <img src="images/icon-complete.svg" alt="">
+        <h2 id="thank-you-header">Thank You!</h2>
+        <p>We've added your card details</p>
+        <button id="continue">Continue</button>
+      </div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
